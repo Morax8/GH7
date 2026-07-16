@@ -16,7 +16,7 @@ const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',    // Alamat database
     user: process.env.DB_USER || 'root',         // Username MySQL
     password: process.env.DB_PASSWORD || '',     // Password MySQL
-    database: process.env.DB_NAME || 'emergency_db', // Nama database
+    database: process.env.DB_NAME || 'siaga_db', // Nama database
     port: process.env.DB_PORT || 3306,           // Port MySQL (default 3306)
     waitForConnections: true,    // Tunggu kalo semua koneksi lagi dipake
     connectionLimit: 10,         // Maksimal 10 koneksi sekaligus
