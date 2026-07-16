@@ -17,9 +17,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.graphics.vector.ImageVector
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewScreenSizes
+import com.example.siaga.ui.chat.ChatScreen
 import com.example.siaga.ui.theme.SIAGATheme
 
 class MainActivity : ComponentActivity() {
@@ -34,7 +32,6 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@PreviewScreenSizes
 @Composable
 fun SIAGAApp() {
     var currentDestination by rememberSaveable { mutableStateOf(AppDestinations.HOME) }
@@ -56,11 +53,14 @@ fun SIAGAApp() {
             }
         }
     ) {
-        Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-            Greeting(
-                name = "Android",
-                modifier = Modifier.padding(innerPadding)
-            )
+        when (currentDestination) {
+            AppDestinations.HOME -> ChatScreen()
+            else -> Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Text(
+                    text = currentDestination.label,
+                    modifier = Modifier.padding(innerPadding)
+                )
+            }
         }
     }
 }
@@ -74,18 +74,3 @@ enum class AppDestinations(
     PROFILE("Profile", R.drawable.ic_account_box),
 }
 
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SIAGATheme {
-        Greeting("Android")
-    }
-}
