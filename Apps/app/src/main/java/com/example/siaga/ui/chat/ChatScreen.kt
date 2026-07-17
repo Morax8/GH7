@@ -547,7 +547,7 @@ private fun TranscriptCard(
         Spacer(Modifier.height(8.451.dp))
 
         val body = when {
-            uiState.isListening -> uiState.partialTranscript ?: "Mendengarkanâ€¦"
+            uiState.isListening -> uiState.partialTranscript ?: "Mendengarkan¦"
             lastSystemError != null && lastAi == null -> lastSystemError.text
             lastAi != null -> lastAi.text
             else -> "Tahan tombol merah dan ceritakan kondisi korban."
@@ -621,7 +621,7 @@ private fun TypedInput(onSend: (String) -> Unit) {
         OutlinedTextField(
             value = input,
             onValueChange = { input = it },
-            placeholder = { Text("Ketik keadaan daruratâ€¦", fontSize = 12.677.sp, color = TextNavIdle) },
+            placeholder = { Text("Ketik keadaan darurat¦", fontSize = 12.677.sp, color = TextNavIdle) },
             textStyle = androidx.compose.ui.text.TextStyle(fontSize = 12.677.sp, color = SiagaTextPrimary),
             singleLine = true,
             shape = RoundedCornerShape(10.564.dp),
