@@ -104,8 +104,13 @@ async function handleEmergencyMessage(socket, text) {
 
                 // Teks yang dibacakan HP disusun di sini supaya sintesisnya
                 // bisa dimulai sekarang juga (HP tinggal ambil hasilnya).
-                const speech = `${aiResponse.instruction} Rumah sakit terdekat: ` +
-                    `${hospital.name}, jarak ${distance}. Membuka panggilan darurat.`;
+                //
+                // Nama RS dan jaraknya SENGAJA tidak dibacakan: itu informasi
+                // untuk mata, dan sudah tampil di kartu. Membacakannya menunda
+                // panggilan beberapa detik di saat user sedang menekan dada.
+                // Yang perlu didengar cuma "apa yang sedang terjadi".
+                const speech = `${aiResponse.instruction} ` +
+                    `Menghubungkan Anda ke rumah sakit terdekat sekarang.`;
                 startSynthesis(speech);
 
                 socket.emit('ai-response', {

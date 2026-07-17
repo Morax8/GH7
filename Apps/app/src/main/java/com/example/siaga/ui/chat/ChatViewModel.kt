@@ -374,11 +374,11 @@ class ChatViewModel(application: Application) : AndroidViewModel(application) {
         }
 
         val hospital = response.hospital
-        // Pakai teks dari server kalau ada — audionya sudah mulai disiapkan di sana.
+        // Pakai teks dari server kalau ada — audionya sudah mulai disiapkan di
+        // sana. Cadangan di bawah harus sependek versi server: nama RS & jarak
+        // tidak dibacakan (sudah ada di kartu), supaya panggilan tidak tertunda.
         val spokenText = response.speech ?: if (hospital != null) {
-            response.instruction +
-                " Rumah sakit terdekat: ${hospital.name}, jarak ${hospital.distance}. " +
-                "Membuka panggilan darurat."
+            "${response.instruction} Menghubungkan Anda ke rumah sakit terdekat sekarang."
         } else {
             response.instruction
         }
