@@ -1,0 +1,23 @@
+<!--
+  Ikon nav "Darurat" (rumah). Path asli dari Figma (node 64:45).
+  Warnanya di-tint dari Compose: aktif #F0F0F0, non-aktif #666666.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="23.241dp"
+    android:height="23.241dp"
+    android:viewportWidth="23.241"
+    android:viewportHeight="23.241"
+    android:tint="#F0F0F0">
+    <path
+        android:pathData="M2.90515,10.1681L11.6205,2.90527L20.3359,10.1681"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M4.84204,9.19971V19.3677C4.84204,19.6245 4.94407,19.8708 5.12567,20.0524C5.30728,20.234 5.55359,20.336 5.81042,20.336H9.68392V14.5258H13.5574V20.336H17.4309C17.6878,20.336 17.9341,20.234 18.1157,20.0524C18.2973,19.8708 18.3993,19.6245 18.3993,19.3677V9.19971"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

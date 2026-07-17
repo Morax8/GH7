@@ -7,6 +7,21 @@
     <!-- Lokasi GPS untuk pencarian rumah sakit terdekat -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- Mikrofon untuk fitur push-to-talk (Speech-to-Text) -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- Menelepon RS terdekat otomatis saat kondisi kritis. Tanpa izin ini
+         aplikasi cuma bisa membuka dialer yang sudah terisi nomornya. -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- Getar peringatan saat benturan terdeteksi. Izin normal — tidak perlu
+         dialog runtime, jadi tidak ikut di halaman izin onboarding. -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Wajib di API 30+ agar SpeechRecognizer bisa menemukan service pengenal suara -->
+    <queries>
+        <intent>
+            <action android:name="android.speech.RecognitionService" />
+        </intent>
+    </queries>
 
     <application
         android:allowBackup="true"
@@ -23,13 +38,25 @@
             android:exported="true"
             android:label="@string/app_name"
             android:windowSoftInputMode="adjustResize"
-            android:theme="@style/Theme.SIAGA">
+            android:theme="@style/Theme.SIAGA.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Widget SOS: tap dari home screen -> aplikasi terbuka & mic menyala -->
+        <receiver
+            android:name=".widget.SosWidgetReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/sos_widget_info" />
+        </receiver>
     </application>
 
 </manifest>

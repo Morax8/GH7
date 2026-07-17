@@ -1,0 +1,25 @@
+<!-- Ikon "Mikrofon" pada kartu izin SIAGA-03. Path asli dari Figma (node 29:14). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="21.128dp"
+    android:height="21.128dp"
+    android:viewportWidth="21.128"
+    android:viewportHeight="21.128">
+    <path
+        android:pathData="M10.5641,1.76099C9.86368,1.76099 9.19192,2.03924 8.69663,2.53452C8.20135,3.02981 7.9231,3.70157 7.9231,4.40201V10.5644C7.9231,11.2648 8.20135,11.9366 8.69663,12.4319C9.19192,12.9272 9.86368,13.2054 10.5641,13.2054C11.2646,13.2054 11.9363,12.9272 12.4316,12.4319C12.9269,11.9366 13.2051,11.2648 13.2051,10.5644V4.40201C13.2051,3.70157 12.9269,3.02981 12.4316,2.53452C11.9363,2.03924 11.2646,1.76099 10.5641,1.76099Z"
+        android:strokeColor="#F0F0F0"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M16.7265,8.80347V10.5642C16.7265,12.1985 16.0773,13.7659 14.9216,14.9216C13.7659,16.0773 12.1985,16.7265 10.5641,16.7265C8.92976,16.7265 7.36233,16.0773 6.20666,14.9216C5.05098,13.7659 4.40173,12.1985 4.40173,10.5642V8.80347"
+        android:strokeColor="#F0F0F0"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M10.5641,16.7266V19.3676"
+        android:strokeColor="#F0F0F0"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

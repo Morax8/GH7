@@ -134,6 +134,7 @@ class EmergencySocketClient(private val serverUrl: String = ServerConfig.BASE_UR
                 )
             },
             action = json.optString("action").takeIf { it.isNotBlank() },
+            speech = json.optString("speech").takeIf { it.isNotBlank() },
         )
     }
 

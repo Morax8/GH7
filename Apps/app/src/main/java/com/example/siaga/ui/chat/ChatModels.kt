@@ -23,6 +23,15 @@ data class ChatUiState(
     val messages: List<ChatMessage> = emptyList(),
     val isAnalyzing: Boolean = false,
     val connectionStatus: ConnectionStatus = ConnectionStatus.CONNECTING,
+    /** true selama tombol mikrofon ditahan dan SpeechRecognizer aktif. */
+    val isListening: Boolean = false,
+    /** Transkrip sementara (partial result STT) saat user masih berbicara. */
+    val partialTranscript: String? = null,
+    /**
+     * Sisa detik sebelum laporan otomatis dikirim setelah benturan terdeteksi.
+     * null = tidak ada benturan yang sedang dihitung mundur.
+     */
+    val crashCountdown: Int? = null,
 )
 
 /** Efek satu-kali yang harus dieksekusi oleh layer UI (butuh Context/Activity). */
@@ -30,6 +39,6 @@ sealed interface ChatEffect {
     /** Minta permission lokasi lalu ambil GPS (respon event "ask-location"). */
     data object RequestLocation : ChatEffect
 
-    /** Buka dialer telepon terisi nomor RS (respon action DIAL_EMERGENCY). */
-    data class OpenDialer(val phoneNumber: String) : ChatEffect
+    /** Telepon nomor RS (respon action DIAL_EMERGENCY). */
+    data class PlaceCall(val phoneNumber: String) : ChatEffect
 }

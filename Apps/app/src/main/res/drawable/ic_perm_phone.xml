@@ -1,0 +1,22 @@
+<!--
+  Ikon "Telepon" pada kartu izin SIAGA-03.
+
+  Kartunya belum ada di Figma, jadi ikonnya diambil dari set yang sama dengan
+  dua kartu lainnya: Lucide "phone". Ikon Lokasi & Mikrofon di Figma terbukti
+  Lucide yang diskalakan 21.128/24 (mis. titik 12 → 10.5641, 19 → 16.7265),
+  dan tebal garisnya 1/10 viewport. Di sini viewport-nya dibiarkan 24 (ukuran
+  asli Lucide) dengan strokeWidth 2.4, jadi rasionya sama persis — hasilnya
+  sebangun dengan dua ikon lainnya tanpa perlu menghitung ulang tiap titik.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="21.128dp"
+    android:height="21.128dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+    <path
+        android:pathData="M22,16.92 V19.92 A2,2 0 0,1 19.82,21.92 A19.79,19.79 0 0,1 11.19,18.85 A19.5,19.5 0 0,1 5.19,12.85 A19.79,19.79 0 0,1 2.12,4.18 A2,2 0 0,1 4.11,2 H7.11 A2,2 0 0,1 9.11,3.72 A12.84,12.84 0 0,0 9.81,6.53 A2,2 0 0,1 9.36,8.64 L8.09,9.91 A16,16 0 0,0 14.09,15.91 L15.36,14.64 A2,2 0 0,1 17.47,14.19 A12.84,12.84 0 0,0 20.28,14.89 A2,2 0 0,1 22,16.92 Z"
+        android:strokeColor="#F0F0F0"
+        android:strokeWidth="2.4"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

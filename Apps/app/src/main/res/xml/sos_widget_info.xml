@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Widget SOS: 4x1 (satu baris penuh). Sengaja kecil — widget yang makan tempat
+  adalah widget yang dihapus user, dan widget darurat cuma berguna kalau
+  bertahan di home screen.
+
+  initialLayout wajib diisi untuk Glance: itu layout sementara yang dipakai
+  launcher sebelum konten Compose-nya selesai dirender.
+-->
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="250dp"
+    android:minHeight="60dp"
+    android:targetCellWidth="4"
+    android:targetCellHeight="1"
+    android:description="@string/widget_description"
+    android:previewImage="@mipmap/ic_launcher"
+    android:initialLayout="@layout/glance_default_loading_layout"
+    android:resizeMode="horizontal"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen" />

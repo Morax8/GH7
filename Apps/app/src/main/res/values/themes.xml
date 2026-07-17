@@ -2,4 +2,16 @@
 <resources>
 
     <style name="Theme.SIAGA" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!--
+      Tema splash bawaan Android. Di Android 12+ sistem SELALU menampilkan
+      splash-nya sendiri, mau kita pakai API ini atau tidak — kalau dibiarkan
+      default, user melihat splash putih dulu baru SIAGA-01 (kelihatan seperti
+      bug). Dengan menyamakan background & ikonnya, keduanya terlihat menyatu.
+    -->
+    <style name="Theme.SIAGA.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/siaga_splash_background</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/mic_badge</item>
+        <item name="postSplashScreenTheme">@style/Theme.SIAGA</item>
+    </style>
 </resources>

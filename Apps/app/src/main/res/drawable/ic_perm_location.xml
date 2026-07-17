@@ -1,0 +1,19 @@
+<!-- Ikon "Lokasi" pada kartu izin SIAGA-03. Path asli dari Figma (node 29:7). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="21.128dp"
+    android:height="21.128dp"
+    android:viewportWidth="21.128"
+    android:viewportHeight="21.128">
+    <path
+        android:pathData="M17.6068,8.80348C17.6068,14.0855 10.5641,19.3676 10.5641,19.3676C10.5641,19.3676 3.52136,14.0855 3.52136,8.80348C3.52136,6.93563 4.26336,5.14428 5.58413,3.82351C6.9049,2.50274 8.69625,1.76074 10.5641,1.76074C12.4319,1.76074 14.2233,2.50274 15.5441,3.82351C16.8648,5.14428 17.6068,6.93563 17.6068,8.80348Z"
+        android:strokeColor="#F0F0F0"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M10.5641,11.4444C12.0227,11.4444 13.2051,10.262 13.2051,8.80338C13.2051,7.34478 12.0227,6.16235 10.5641,6.16235C9.10552,6.16235 7.9231,7.34478 7.9231,8.80338C7.9231,10.262 9.10552,11.4444 10.5641,11.4444Z"
+        android:strokeColor="#F0F0F0"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

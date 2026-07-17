@@ -1,0 +1,19 @@
+<!-- Ikon nav "Faskes". Path asli dari Figma (node 64:51). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="23.241dp"
+    android:height="23.241dp"
+    android:viewportWidth="23.241"
+    android:viewportHeight="23.241"
+    android:tint="#666666">
+    <path
+        android:pathData="M16.4624,2.90527H6.77866C4.63938,2.90527 2.90515,4.6395 2.90515,6.77878V16.4625C2.90515,18.6018 4.63938,20.336 6.77866,20.336H16.4624C18.6017,20.336 20.3359,18.6018 20.3359,16.4625V6.77878C20.3359,4.6395 18.6017,2.90527 16.4624,2.90527Z"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M11.6206,7.74707V15.4941M7.74707,11.6206H15.4941"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round" />
+</vector>

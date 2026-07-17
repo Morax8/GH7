@@ -1,0 +1,11 @@
+<!-- Pin pada chip lokasi di top bar. Path asli dari Figma (node 31:8). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="8.652dp"
+    android:height="8.652dp"
+    android:viewportWidth="8.662"
+    android:viewportHeight="8.662">
+    <path
+        android:pathData="M4.33122,8.02866C6.37326,8.02866 8.02866,6.37326 8.02866,4.33122C8.02866,2.28919 6.37326,0.633789 4.33122,0.633789C2.28919,0.633789 0.633789,2.28919 0.633789,4.33122C0.633789,6.37326 2.28919,8.02866 4.33122,8.02866Z"
+        android:strokeColor="#666666"
+        android:strokeWidth="1.26769" />
+</vector>

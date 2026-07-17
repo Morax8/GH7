@@ -18,6 +18,12 @@ data class AiResponse(
     val needLocation: Boolean,
     val hospital: Hospital? = null,
     val action: String? = null,
+    /**
+     * Teks siap-baca dari server (instruksi + info RS). Server sudah mulai
+     * menyintesis teks ini saat mengirim response, jadi memakainya apa adanya
+     * membuat audio tersedia hampir seketika. Null → susun sendiri di client.
+     */
+    val speech: String? = null,
 ) {
     companion object {
         const val ACTION_DIAL_EMERGENCY = "DIAL_EMERGENCY"

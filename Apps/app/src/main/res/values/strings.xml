@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">SIAGA</string>
+    <string name="app_name">S!GAP</string>
+    <string name="widget_description">Tombol darurat — satu tap langsung merekam</string>
 </resources>

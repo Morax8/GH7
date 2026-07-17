@@ -1,0 +1,63 @@
+<!--
+  Lencana mikrofon: lingkaran merah + ikon mic. Path-nya diambil apa adanya
+  dari export SVG Figma (node 28:5 s/d 28:9 pada "SIAGA - 02"); di Figma
+  bentuknya 5 vektor terpisah, di sini disatukan dengan translate sesuai
+  posisi aslinya relatif terhadap lingkaran.
+
+  Bentuk dasarnya lingkaran sempurna (190.154 x 190.154). Di layar splash,
+  desainer merentangkannya jadi 190.154 x 195.569 — jadi di sana cukup
+  digambar dengan tinggi itu, tidak perlu aset terpisah.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="190.154dp"
+    android:height="190.154dp"
+    android:viewportWidth="190.154"
+    android:viewportHeight="190.154">
+
+    <!-- 28:5 — lingkaran merah -->
+    <path
+        android:fillColor="#C0392B"
+        android:pathData="M95.0769,190.154C147.586,190.154 190.154,147.586 190.154,95.0769C190.154,42.5674 147.586,0 95.0769,0C42.5674,0 0,42.5674 0,95.0769C0,147.586 42.5674,190.154 95.0769,190.154Z" />
+
+    <!-- 28:6 — kapsul mikrofon -->
+    <group
+        android:translateX="79.231"
+        android:translateY="58.102">
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M31.6923,15.8462C31.6923,7.09456 24.5977,0 15.8462,0C7.09456,0 0,7.09456 0,15.8462V28.5231C0,37.2747 7.09456,44.3692 15.8462,44.3692C24.5977,44.3692 31.6923,37.2747 31.6923,28.5231V15.8462Z" />
+    </group>
+
+    <!-- 28:7 — busur penangkap -->
+    <group
+        android:translateX="65.233"
+        android:translateY="95.868">
+        <path
+            android:pathData="M1.3205,1.32056C1.3205,21.0402 10.8282,30.9 29.8436,30.9C48.859,30.9 58.3667,21.0402 58.3667,1.32056"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="2.64103"
+            android:strokeLineCap="round" />
+    </group>
+
+    <!-- 28:8 — tiang -->
+    <group
+        android:translateX="93.757"
+        android:translateY="125.448">
+        <path
+            android:pathData="M1.3205,1.32056V13.9975"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="2.64103"
+            android:strokeLineCap="round" />
+    </group>
+
+    <!-- 28:9 — alas -->
+    <group
+        android:translateX="81.080"
+        android:translateY="138.125">
+        <path
+            android:pathData="M1.3205,1.32056H26.6743"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="2.64103"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

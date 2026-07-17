@@ -1,0 +1,20 @@
+<!-- Ikon nav "Riwayat" (jam). Path asli dari Figma (node 64:60). -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="23.241dp"
+    android:height="23.241dp"
+    android:viewportWidth="23.241"
+    android:viewportHeight="23.241"
+    android:tint="#666666">
+    <path
+        android:pathData="M11.6205,20.336C16.4339,20.336 20.3359,16.434 20.3359,11.6207C20.3359,6.80728 16.4339,2.90527 11.6205,2.90527C6.80716,2.90527 2.90515,6.80728 2.90515,11.6207C2.90515,16.434 6.80716,20.336 11.6205,20.336Z"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M11.6206,6.77856V11.6204L14.5257,14.5256"
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2.11282"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>
