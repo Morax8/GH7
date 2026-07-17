@@ -10,6 +10,15 @@ const { analyzeEmergency } = require('../services/aiService');
 // Import model untuk mengakses database rumah sakit 
 const { findNearestHospital } = require('../models/hospitalModel');
 
+// Sintesis suara dimulai dari sini (bukan nunggu HP minta), biar latensi
+// Edge TTS jalan barengan sama pengiriman event ke HP.
+const { startSynthesis } = require('../services/ttsService');
+
+// NOMOR DEMO: semua panggilan darurat diarahkan ke sini, bukan ke nomor RS
+// asli — aplikasi menelepon OTOMATIS, jadi RS beneran jangan sampai kena saat
+// testing. Sebelum dipakai sungguhan, kosongkan supaya balik ke nomor RS asli.
+const DEMO_PHONE = process.env.DEMO_PHONE || '08119711322';
+
 // ==============================================
 // SESSION STORAGE (Penyimpanan sementara di memori)
 // ==============================================
@@ -60,13 +69,16 @@ async function handleEmergencyMessage(socket, text) {
         console.log(`📚 [${userId}] History updated, now:`, session.history.length);
         
     // cek AI need location apa ngga
-        if (aiResponse.need_location) {
+        // Hanya minta lokasi kalau sesi BELUM punya lokasi; kalau sudah ada,
+        // lanjut ke pencarian RS supaya tidak loop ask-location terus-menerus.
+        if (aiResponse.need_location && !session.location) {
             console.log(`📍 [${userId}] need_location = true, requesting location...`);
             
+            startSynthesis(aiResponse.instruction);
             socket.emit('ask-location', {
-                type: 'LOCATION_REQUEST',           
-                instruction: aiResponse.instruction, 
-                state: aiResponse.state              
+                type: 'LOCATION_REQUEST',
+                instruction: aiResponse.instruction,
+                state: aiResponse.state
             });
             
             console.log(`✅ [${userId}] ask-location event emitted!`);
@@ -88,15 +100,28 @@ async function handleEmergencyMessage(socket, text) {
                 console.log(`🏥 [${userId}] Hospital found:`, hospital.name);
                 console.log(`📞 [${userId}] Hospital phone:`, hospital.phone);
                 
+                const distance = `${Math.round(hospital.distance_km)} km`;
+
+                // Teks yang dibacakan HP disusun di sini supaya sintesisnya
+                // bisa dimulai sekarang juga (HP tinggal ambil hasilnya).
+                const speech = `${aiResponse.instruction} Rumah sakit terdekat: ` +
+                    `${hospital.name}, jarak ${distance}. Membuka panggilan darurat.`;
+                startSynthesis(speech);
+
                 socket.emit('ai-response', {
-                    ...aiResponse,                       
-                    hospital: {                          
-                        name: hospital.name,             
-                        phone: hospital.phone,           
-                        address: hospital.address,       
-                        distance: `${Math.round(hospital.distance_km)} km`
+                    ...aiResponse,
+                    hospital: {
+                        name: hospital.name,
+                        // Nomor demo dipakai apa adanya biar yang tampil di kartu
+                        // sama dengan yang benar-benar ditelepon (jangan sampai
+                        // user lihat nomor RS tapi yang tersambung nomor lain).
+                        phone: DEMO_PHONE || hospital.phone,
+                        address: hospital.address,
+                        distance: distance
                     },
-                    action: 'DIAL_EMERGENCY'                             });
+                    action: 'DIAL_EMERGENCY',
+                    speech: speech
+                });
                 
                 console.log(`✅ [${userId}] ai-response with hospital emitted!`);
                 return; 
@@ -109,7 +134,8 @@ async function handleEmergencyMessage(socket, text) {
         // - State CRITICAL tapi belum ada lokasi ATAU
         // - Tidak ada RS di database
         console.log(`📤 [${userId}] Sending normal ai-response...`);
-        
+
+        startSynthesis(aiResponse.instruction);
         socket.emit('ai-response', aiResponse);
         
         console.log(`✅ [${userId}] ai-response emitted!`);

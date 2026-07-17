@@ -15,7 +15,6 @@ async function findNearestHospital(lat, lng, district = null) {
             latitude, 
             longitude,
             district,
-            // Rumus Haversine: menghitung jarak dalam km
             (6371 * ACOS(
                 COS(RADIANS(?)) * COS(RADIANS(latitude)) * 
                 COS(RADIANS(longitude) - RADIANS(?)) + 
@@ -40,6 +39,10 @@ async function findNearestHospital(lat, lng, district = null) {
     try {
         // Eksekusi query
         const [rows] = await pool.execute(query, params);
+        // Kalo gak ada RS di district yang sama, fallback: cari terdekat tanpa filter district
+        if (!rows[0] && district) {
+            return findNearestHospital(lat, lng, null);
+        }
         return rows[0] || null;
     } catch (error) {
         console.error('❌ Query error:', error.message);

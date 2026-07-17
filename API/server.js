@@ -93,7 +93,10 @@
         console.log(`📋 Model yang digunakan: ${AVAILABLE_MODELS.join(', ')}`);
         
         await connectDB();
-        
+
+        // Buka koneksi TTS lebih awal biar suara pertama gak kena delay handshake
+        await require('./src/services/ttsService').prewarm();
+
         console.log(`\n📡 Socket.IO: http://localhost:${PORT}`);
         console.log(`📝 API Docs: http://localhost:${PORT}/`);
     });
